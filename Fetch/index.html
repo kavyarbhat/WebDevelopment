@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="quote"></h1>
+    <script>
+      const addToDom = document.querySelector("#quote");
+      const response = fetch("https://api.kanye.rest/");
+      setTimeout(() => {
+        console.log("where i am");
+      }, 2000);
+      response
+        .then((res) => {
+          const json = res.json();
+          json.then((data) => (addToDom.textContent = data.quote));
+        })
+        .catch((err) => (addToDom.innerHTML = "<h6>Err 404</h6>"));
+    </script>
+  </body>
+</html>

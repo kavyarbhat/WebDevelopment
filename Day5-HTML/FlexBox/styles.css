@@ -1,0 +1,21 @@
+#container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.one {
+  background-color: aqua;
+  width: 225px;
+  height: 225px;
+}
+.two {
+  background-color: red;
+  width: 225px;
+  height: 225px;
+}
+.three {
+  background-color: blue;
+  width: 225px;
+  height: 225px;
+}

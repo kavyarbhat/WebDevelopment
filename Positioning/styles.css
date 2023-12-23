@@ -1,0 +1,49 @@
+#parent {
+  background-color: #212121;
+  margin: auto;
+  width: 256px;
+  height: 256px;
+  /* Position properties below this line */
+  position: relative;
+  /* Position properties above this line */
+}
+
+#child-1 {
+  width: 2rem;
+  height: 2rem;
+  background-color: #ff8a80;
+  /* Position properties below this line */
+  position: absolute;
+  z-index: 3;
+  /*top: 0;
+  right: 0;*/
+  /* level5*/
+
+  /* Position properties above this line */
+}
+
+#child-2 {
+  width: 2rem;
+  height: 2rem;
+  background-color: #69f0ae;
+  /* Position properties below this line */
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 2;
+
+  /* Position properties above this line */
+}
+
+#child-3 {
+  width: 2rem;
+  height: 2rem;
+  background-color: #ffee58;
+  /* Position properties below this line */
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 1;
+
+  /* Position properties above this line */
+}

@@ -1,0 +1,17 @@
+nav {
+  display: flex;
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+  justify-content: space-between;
+  align-items: center;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+  width: 15rem;
+  margin: 0 10px 0 0;
+}
+ul li {
+  list-style: none;
+}

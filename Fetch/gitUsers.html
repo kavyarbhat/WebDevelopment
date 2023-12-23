@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="add"></ul>
+    <script>
+      const addToDom = document.querySelector("#add");
+      const gitUsers = fetch("https://api.github.com/users");
+      gitUsers.then((res) => {
+        const json = res.json();
+        json.then((data) => {
+          data.forEach((element) => {
+            const createElem = document.createElement("li");
+            createElem.textContent = element.login;
+            addToDom.append(createElem);
+            console.log(element.login);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
