@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    <h3 id="count">0</h3>
+    <button onClick="increament()">+</button>
+    <button onClick="decreament()">-</button>
+
+    <script>
+        const countElement = document.querySelector("#count")
+        const increament = () => {
+            const currentCount = parseInt(countElement.textContent);
+            //const currentCount2 = Number(countElement.textContent)
+           // console.log(currentCount,currentCount2);
+           countElement.textContent = currentCount + 1;
+            
+        };
+        const decreament= ()=>{
+           const currentCount = parseInt(countElement.textContent);
+           if(currentCount<=0 && "Empty")
+               countElement.textContent = 0;  
+           else 
+           countElement.textContent = currentCount - 1;
+
+        }
+    </script>
+</body>
+</html>

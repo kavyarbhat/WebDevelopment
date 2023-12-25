@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="add"> </div>
+    <script>
+    const fetchQuote = async ()=>{
+        const response= await fetch("https://api.kanye.rest/");
+        const json = await response.json();
+        return json.quote;
+
+    }
+    const addToDom = (quote)=>{
+        const addTodomText= document.querySelector("#add")
+        addTodomText.textContent=quote;
+
+    }
+    const quoteKanye = async ()=>{
+        const quote = await fetchQuote();
+        addToDom(quote)
+    }
+    quoteKanye();
+</script>
+</body>
+</html>

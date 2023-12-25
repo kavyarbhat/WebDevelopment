@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const placeHolder = new Promise(async (reject,accept)=>{
+            try {
+                const response= fetch("https://api.github.com/users")
+                if(response.ok) accept("got the response")
+                else reject("failed to get users");
+            } catch  {
+                reject("Api call failed")     
+            }
+        });
+        placeHolder
+        .then((res)=> console.log(res))
+        .catch((err)=>console.log(err));
+    </script>
+</body>
+</html>
