@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Book Appoitment</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <main class="p-4">
+    <form id="booking-form">
+        <h5>Basic Info</h5>
+        <div class="my-2">
+            <label for="fName" class="form-label">Full Name</label>
+            <input type="text" id="fName" name="fName" placeholder="name" class="form-control">
+
+        </div>
+        <div class="my-2">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email" class="form-control">
+        </div>
+        <div class="my-2">
+            <h5>Doctor</h5>
+           <select name="doctor" id="doctor" class="form-select" required>
+            <option value="" selected>Choose Any Doctor</option>
+            <option value="Doc1 John">Doc1 John</option>
+            <option value="Doc 2 marry">Doc 2 marry</option>
+            <option value="doc3 ayu">doc3 ayu</option>
+           </select>
+        </div>
+        <div class="my-2">
+           <h5>Where</h5>
+            <input type="radio" id="googlemeet" name="location" class="form-check-input" value="GOOGLE_MEET" required>
+            <label for="googlemeet">Google Meet</label>
+            <input type="radio" id="phone" name="location" class="form-check-input" value="PHONE" required>
+            <label for="phone">Phone</label>
+        </div>
+        <div class="my-2">
+            <h5>Date and Time</h5>
+            <input type="datetime-local" name="date" id="date" required>
+         </div>
+         <div class="my-2">
+            <button type="submit" class="btn btn-primary" >Book Appoitmant</button>
+            <button type="submit" class="btn btn-primary" >Reset Form</button>
+         </div>
+    </form>
+    </main>
+    <script>
+        const data = {
+            fullName :"",
+            Email : "",
+            Doctor : "",
+            Location :"",
+            Date :""
+        }
+        const form=document.querySelector("#booking-form");
+        form.addEventListener("submit", async(e)=>{
+            e.preventDefault();
+            const {fullName,Email,Doctor,Location,Date} = form.elements;
+            const formData = {
+                fullName:  fName.value,
+                Email: email.value,
+                Doctor: doctor.value,
+                Location: location.value,
+                Date: date.value
+            }
+            const response = await fetch("https://jsonplaceholder.typicode.com/posts",
+          {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8"
+            }
+          }
+          );
+        const resJson = await response.json();
+        console.log(resJson);
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
